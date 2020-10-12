@@ -15,6 +15,7 @@ namespace TagHelpers.TagHelpers
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             output.TagName = "div";
+            output.TagMode = TagMode.StartTagAndEndTag; // default
             output.Attributes.Add("class", "highlight"); 
         }
 
