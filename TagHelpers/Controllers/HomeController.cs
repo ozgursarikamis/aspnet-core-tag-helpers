@@ -25,6 +25,17 @@ namespace TagHelpers.Controllers
             return View("ModelTest", model);
         }
 
+        public IActionResult ModelExpression()
+        {
+            var model = new ModelAddress
+            {
+                FirstName = "Peter",
+                LastName = "Kellner"
+            };
+
+            return View("ModelExpression", model);
+        }
+
         public IActionResult Index()
         {
             return View();
