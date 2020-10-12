@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Razor.TagHelpers;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace TagHelpers.TagHelpers
 {
@@ -13,7 +14,9 @@ namespace TagHelpers.TagHelpers
         public string Model { get; set; }
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
+            output.TagName = "div";
             output.Attributes.Add("class", "highlight"); 
         }
+
     }
 }
