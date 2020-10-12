@@ -18,6 +18,5 @@ namespace TagHelpers.TagHelpers
             output.TagMode = TagMode.StartTagAndEndTag; // default
             output.Attributes.Add("class", "highlight"); 
         }
-
     }
 }

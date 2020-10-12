@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using TagHelpers.Models;
@@ -11,11 +7,22 @@ namespace TagHelpers.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        public ILogger<HomeController> Logger { get; }
 
         public HomeController(ILogger<HomeController> logger)
         {
-            _logger = logger;
+            Logger = logger;
+        }
+
+        public IActionResult ModelTest()
+        {
+            var model = new ModelAddress
+            {
+                FirstName = "Peter",
+                LastName = "Kellner"
+            };
+
+            return View("ModelTest", model);
         }
 
         public IActionResult Index()
@@ -33,5 +40,11 @@ namespace TagHelpers.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+    }
+
+    public class ModelAddress
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     }
 }
