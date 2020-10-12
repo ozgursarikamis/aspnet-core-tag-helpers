@@ -13,7 +13,7 @@ namespace TagHelpers.TagHelpers
         public string Model { get; set; }
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
-
+            output.Attributes.Add("class", "highlight"); 
         }
     }
 }
