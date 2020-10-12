@@ -6,6 +6,7 @@ namespace TagHelpers.TagHelpers
     [HtmlTargetElement("auto-price")]
     public class AutoPriceTagHelper : TagHelper
     {
+        [HtmlAttributeNotBound]
         public string Make { get; set; }
 
         [HtmlAttributeName("model-name")]
