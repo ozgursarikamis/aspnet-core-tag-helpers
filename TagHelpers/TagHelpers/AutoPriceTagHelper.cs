@@ -7,6 +7,8 @@ namespace TagHelpers.TagHelpers
     public class AutoPriceTagHelper : TagHelper
     {
         public string Make { get; set; }
+
+        [HtmlAttributeName("model-name")]
         public string Model { get; set; }
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
