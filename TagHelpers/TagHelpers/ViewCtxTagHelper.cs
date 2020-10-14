@@ -15,7 +15,7 @@ namespace TagHelpers.TagHelpers
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             var isHttps = ViewContext.HttpContext.Request.IsHttps;
-            output.Content.SetHtmlContent("<br />isHttps: " + isHttps);
+            output.Content.SetContent("MiscString: " + MiscString);
         }
     }
 }
