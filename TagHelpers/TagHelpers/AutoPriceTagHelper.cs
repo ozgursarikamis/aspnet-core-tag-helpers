@@ -4,19 +4,15 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 namespace TagHelpers.TagHelpers
 {
     // You may need to install the Microsoft.AspNetCore.Razor.Runtime package into your project
-    [HtmlTargetElement("auto-price")]
+    [HtmlTargetElement(Attributes = "[model='laser']")]
     public class AutoPriceTagHelper : TagHelper
-    {
-        [HtmlAttributeNotBound]
+    { 
         public string Make { get; set; }
 
-        [HtmlAttributeName("model-name")]
         public string Model { get; set; }
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
-            output.TagName = "div";
-            output.TagMode = TagMode.StartTagAndEndTag; // default
-            output.Attributes.Add("class", "highlight"); 
+
         }
     }
 }

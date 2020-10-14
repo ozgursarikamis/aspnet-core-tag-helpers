@@ -1,9 +1,15 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Tag Helpers";
 }
 
-@{
-    var date = new DateTime(1969, 7, 20).ToString("F");
-    //var moonLandingDate = "07.20.1969";
-}
-<time-since compare-date-time="@date"></time-since>
+<auto-price make="plymouth" model="laser"></auto-price>
+<auto-price make="plymouth" model="voyager"></auto-price>
+<auto-price make="ford" model="laser"></auto-price>
+<auto-price make="ford" model="mustang"></auto-price>
+<auto-price make="ford" model="thunderbird"></auto-price>
+<auto-price make="ford" model="torino"></auto-price>
+<auto-price make="triumph" model="speedmaster"></auto-price>
+<auto-price make="gm"></auto-price>
+<auto-price make="gm" color="red"></auto-price>
+
+<test-element></test-element>
