@@ -3,6 +3,7 @@
 namespace TagHelpers.TagHelpers
 {
     [RestrictChildren("tab-item")]
+    [HtmlTargetElement("tab-item", ParentTag = "tab")]
     public class TabItemTagHelper : TagHelper
     {
         public string Title { get; set; }
