@@ -9,7 +9,12 @@ namespace TagHelpers.Controllers
             return View();
         }
 
-        public IActionResult AnchorTagHelper(string id)
+        public IActionResult AnchorTagHelper()
+        {
+            return View();
+        }
+
+        public IActionResult ScriptTagHelper()
         {
             return View();
         }
