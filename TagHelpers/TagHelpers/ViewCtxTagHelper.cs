@@ -7,6 +7,7 @@ namespace TagHelpers.TagHelpers
     [HtmlTargetElement("view-ctx")]
     public class ViewCtxTagHelper : TagHelper
     {
+        [HtmlAttributeNotBound]
         [ViewContext]
         public ViewContext ViewContext { get; set; }
 
@@ -14,7 +15,8 @@ namespace TagHelpers.TagHelpers
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
-            var isHttps = ViewContext.HttpContext.Request.IsHttps;
+            // var isHttps = ViewContext.HttpContext.Request.IsHttps;
+            MiscString = ViewContext.ExecutingFilePath;
             output.Content.SetContent("MiscString: " + MiscString);
         }
     }
