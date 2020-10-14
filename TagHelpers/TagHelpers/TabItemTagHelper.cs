@@ -8,8 +8,14 @@ namespace TagHelpers.TagHelpers
         public string Title { get; set; }
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
+            var activePage = context.Items["ActivePage"] as string;
+            //if (activePage == Title)
+            //{
+            //    // output.Attributes.Add("class", "active");
+            //}
+            var activeTabIndicator = activePage == Title ? "active" : "";
             output.TagName = "li";
-            var str = $"<a class='nav-link' href='#'>{Title}</a>";
+            var str = $"<a class='{activeTabIndicator} nav-link' href='#'>{Title}</a>";
             output.Content.SetHtmlContent(str);
         }
     }
