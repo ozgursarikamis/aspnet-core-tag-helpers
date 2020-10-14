@@ -7,8 +7,7 @@ namespace TagHelpers.TagHelpers
     public class ModExpTagHelper : TagHelper
     {
         public ModelExpression HelperFor { get; set; }
-         public override void Process
-            (TagHelperContext context, TagHelperOutput output)
+         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             var str = HelperFor == null ? "" :
                 " Name: " + HelperFor.Name +
